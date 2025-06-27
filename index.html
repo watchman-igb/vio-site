@@ -621,15 +621,9 @@
                         </div>
                         
                         <div class="md:w-1/2 p-8 md:p-12">
-                            <form action="https://formsubmit.co/victorigbogabor@gmail.com" method="POST" class="space-y-6">
-                                <!-- turn off spam-captchas -->
-                                <input type="hidden" name="_captcha" value="false">
-                            
-                                <!-- optional: custom subject line inside the email you’ll receive -->
-                                <input type="hidden" name="_subject" value="New VIO Website Enquiry">
-                            
-                                <!-- optional: after-submit thank-you page -->
-                                <!-- <input type="hidden" name="_next" value="https://vio.com/thanks.html"> -->
+                            <form name="contact" netlify class="space-y-6">
+                                <!-- Hidden input for Netlify to track the form -->
+                                <input type="hidden" name="form-name" value="contact">
                             
                                 <!-- Name -->
                                 <div>
