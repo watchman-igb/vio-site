@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="vios-logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIO | Design. Strategy. Clarity.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vio-orange': '#F7931E',
+                        'vio-blue': '#003366',
+                        'vio-lightblue': '#66B2FF',
+                        'vio-charcoal': '#1A1A1A',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #F7931E 0%, #003366 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(247, 147, 30, 0.1) 0%, rgba(0, 51, 102, 0.1) 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #F7931E;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-vio-charcoal">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="vios-logo.png" alt="VIO logo" class="w-20 h-20 rounded-full object-cover">
+                <span class="ml-2 text-xl font-bold gradient-text"></span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link font-medium">Home</a>
+                <a href="#services" class="nav-link font-medium">Services</a>
+                <a href="#projects" class="nav-link font-medium">Projects</a>
+                <a href="#testimonials" class="nav-link font-medium">Testimonials</a>
+                <a href="#contact" class="nav-link font-medium">Contact</a>
+            </nav>
+            
+            <button id="mobile-menu-button" class="md:hidden text-vio-blue">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#home" class="py-2 font-medium">Home</a>
+                <a href="#services" class="py-2 font-medium">Services</a>
+                <a href="#projects" class="py-2 font-medium">Projects</a>
+                <a href="#testimonials" class="py-2 font-medium">Testimonials</a>
+                <a href="#contact" class="py-2 font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg py-20 md:py-32">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    <span class="gradient-text">Design. Strategy. Clarity.</span>
+                </h1>
+                <p class="text-lg md:text-xl mb-8 text-gray-700">
+                    At VIO, we help you build, brand, and grow with precision. Smart, high-impact design and digital solutions for individuals, businesses, and startups.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-vio-orange hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                        Get Started
+                    </a>
+                    <a href="#services" class="border-2 border-vio-blue text-vio-blue hover:bg-vio-blue hover:text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-vio-orange rounded-full opacity-20 absolute -top-10 -left-10"></div>
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-vio-blue rounded-full opacity-20 absolute -bottom-10 -right-10"></div>
+                    <img src="vio-logoss.png" alt="VIO brand mockup" class="relative z-10 rounded-xl shadow-xl w-full max-w-md">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Personality -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">The VIO Approach</h2>
+                <div class="w-20 h-1 bg-vio-orange mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-vio-orange bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lightbulb text-vio-orange text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Creative but clear</h3>
+                    <p class="text-gray-600">We keep it smart, not cluttered. Every design element serves a purpose.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-vio-blue bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-briefcase text-vio-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Professional but fresh</h3>
+                    <p class="text-gray-600">We bring new energy to serious work, balancing professionalism with creativity.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-vio-lightblue bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chess text-vio-lightblue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Simple but strategic</h3>
+                    <p class="text-gray-600">Every move has a purpose. We design with your business goals in mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Streamlined services at the intersection of creativity, strategy, and execution.</p>
+                <div class="w-20 h-1 bg-vio-orange mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Branding & Design -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-2 bg-vio-orange"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-vio-orange bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-palette text-vio-orange text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Branding & Design</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-vio-orange mt-1 mr-2"></i>
+                                <span>Logo design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-vio-orange mt-1 mr-2"></i>
+                                <span>Brand identity kits</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-vio-orange mt-1 mr-2"></i>
+                                <span>Social media graphics</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Website & Shopify -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-2 bg-vio-blue"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-vio-blue bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-globe text-vio-blue text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Website & Shopify</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-vio-blue mt-1 mr-2"></i>
+                                <span>Business websites</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-vio-blue mt-1 mr-2"></i>
+                                <span>E-commerce stores</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-vio-blue mt-1 mr-2"></i>
+                                <span>Landing pages and portfolios</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Content & Writing -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-2 bg-vio-lightblue"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-vio-lightblue bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-pen-fancy text-vio-lightblue text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Content & Writing</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-vio-lightblue mt-1 mr-2"></i>
+                                <span>Website content</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-vio-lightblue mt-1 mr-2"></i>
+                                <span>Social media captions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-vio-lightblue mt-1 mr-2"></i>
+                                <span>Ebooks and ghostwriting</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Creative Strategy -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-2 bg-vio-orange"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-vio-orange bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-chess-queen text-vio-orange text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Creative Strategy</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-vio-orange mt-1 mr-2"></i>
+                                <span>Brand development</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-vio-orange mt-1 mr-2"></i>
+                                <span>Project structuring</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-vio-orange mt-1 mr-2"></i>
+                                <span>Launch planning</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">A showcase of our diverse work across industries and platforms.</p>
+                <div class="w-20 h-1 bg-vio-orange mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Wura's Closet -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Wura's Closet" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Wura's Closet</h3>
+                            <span class="bg-vio-blue bg-opacity-10 text-vio-blue px-3 py-1 rounded-full text-sm font-medium">Shopify</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">E-commerce store design for a fashion boutique based in Texas.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-vio-orange mt-1 mr-2"></i>
+                                <span>Custom homepage & product filters</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-vio-orange mt-1 mr-2"></i>
+                                <span>Mobile optimization & email capture</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-vio-orange mt-1 mr-2"></i>
+                                <span>Branded graphics & lookbook feature</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- AmeliaDev9 Portfolio -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="AmeliaDev9 Portfolio" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">AmeliaDev9 Portfolio</h3>
+                            <span class="bg-vio-lightblue bg-opacity-10 text-vio-lightblue px-3 py-1 rounded-full text-sm font-medium">Wix</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Clean and elegant personal website for a UK-based web designer.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-vio-orange mt-1 mr-2"></i>
+                                <span>About, portfolio gallery, service pricing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-vio-orange mt-1 mr-2"></i>
+                                <span>Contact form integration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-vio-orange mt-1 mr-2"></i>
+                                <span>SEO-friendly copy & responsive design</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Glowskin Organics -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80" alt="Glowskin Organics" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Glowskin Organics</h3>
+                            <span class="bg-vio-blue bg-opacity-10 text-vio-blue px-3 py-1 rounded-full text-sm font-medium">Shopify</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Brand identity and store setup for a Spanish skincare brand.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-vio-orange mt-1 mr-2"></i>
+                                <span>Logo & packaging mockups</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-vio-orange mt-1 mr-2"></i>
+                                <span>Product photography guidelines</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-vio-orange mt-1 mr-2"></i>
+                                <span>Loyalty program & cart automation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-vio-orange hover:bg-orange-600 transition duration-300">
+                    View More Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">What our clients say about working with VIO.</p>
+                <div class="w-20 h-1 bg-vio-orange mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Rachel -->
+                <div class="testimonial-card bg-white p-6 rounded-xl shadow-md border-l-4 border-vio-orange">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-vio-blue font-bold">R</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Rachel</h4>
+                            <p class="text-sm text-gray-500">New York, USA</p>
+                        </div>
+                        <div class="ml-auto text-vio-orange">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "I hired Victor to revamp my Shopify store and honestly didn't expect much. But this guy? Clean layout, smooth navigation, even helped me with product images and copy. I didn't know someone in Nigeria could deliver at Silicon Valley level. 10/10."
+                    </p>
+                </div>
+                
+                <!-- Carlos -->
+                <div class="testimonial-card bg-white p-6 rounded-xl shadow-md border-l-4 border-vio-blue">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-vio-blue font-bold">C</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Carlos</h4>
+                            <p class="text-sm text-gray-500">Barcelona, Spain</p>
+                        </div>
+                        <div class="ml-auto text-vio-orange">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Victor's communication is gold. He gave my brand a whole new look — logo, typography, web style. I love that he didn't just design but explained the 'why' behind every decision. Total professional."
+                    </p>
+                </div>
+                
+                <!-- Amelia -->
+                <div class="testimonial-card bg-white p-6 rounded-xl shadow-md border-l-4 border-vio-lightblue">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-vio-blue font-bold">A</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Amelia</h4>
+                            <p class="text-sm text-gray-500">London, UK</p>
+                        </div>
+                        <div class="ml-auto text-vio-orange">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Found VIO through one of his carousel posts. Booked him for a personal portfolio site. The guy delivered like he's based in Shoreditch. Minimal, smooth, responsive, and way more affordable than local agencies."
+                    </p>
+                </div>
+                
+                <!-- Jake -->
+                <div class="testimonial-card bg-white p-6 rounded-xl shadow-md border-l-4 border-vio-orange">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-vio-blue font-bold">J</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Jake</h4>
+                            <p class="text-sm text-gray-500">Toronto, Canada</p>
+                        </div>
+                        <div class="ml-auto text-vio-orange">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Victor built my Shopify site from scratch. He handled everything — the layout, integrations, and even product tagging. Super impressed. Plus, his time management and clarity made me trust him completely."
+                    </p>
+                </div>
+                
+                <!-- Sabina -->
+                <div class="testimonial-card bg-white p-6 rounded-xl shadow-md border-l-4 border-vio-blue">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-vio-blue font-bold">S</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Sabina</h4>
+                            <p class="text-sm text-gray-500">Berlin, Germany</p>
+                        </div>
+                        <div class="ml-auto text-vio-orange">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Most freelancers don't get both design and strategy. Victor does. He helped me rebrand my skincare label and created a Shopify storefront that looked better than my competitor's. He's sharp, friendly, and consistent."
+                    </p>
+                </div>
+                
+                <!-- Tunde -->
+                <div class="testimonial-card bg-white p-6 rounded-xl shadow-md border-l-4 border-vio-lightblue">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-vio-blue font-bold">T</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Tunde</h4>
+                            <p class="text-sm text-gray-500">Lagos, Nigeria</p>
+                        </div>
+                        <div class="ml-auto text-vio-orange">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Seeing a Nigerian designer kill it for clients abroad inspired me. I booked VIO for my brand kit and got premium quality. Victor is proof that local doesn't mean less. Dude's got range."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Work Together?</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Let's discuss how we can help bring your vision to life.</p>
+                    <div class="w-20 h-1 bg-vio-orange mx-auto mt-4"></div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 bg-vio-blue text-white p-8 md:p-12">
+                            <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-envelope text-vio-orange text-xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-bold">Email</h4>
+                                        <p class="text-vio-lightblue">ogaborvictorigb@gmail.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-phone-alt text-vio-orange text-xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-bold">Phone</h4>
+                                        <p class="text-vio-lightblue">+234 814 658 9595</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-vio-orange text-xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-bold">Location</h4>
+                                        <p class="text-vio-lightblue">Lagos, Nigeria</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="pt-6">
+                                    <h4 class="font-bold mb-4">Connect With Us</h4>
+                                    <div class="flex space-x-4">
+                                        <!-- Facebook -->
+<a href="https://web.facebook.com/victor.ogabor.5" target="_blank" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition duration-300">
+    <i class="fab fa-facebook-f"></i>
+</a>
+                                       <!-- Twitter -->
+<a href="https://x.com/IgbVictor" target="_blank" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition duration-300">
+    <i class="fab fa-x"></i>
+</a>
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/victor_igb_/" target="_blank" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition duration-300">
+    <i class="fab fa-instagram"></i>
+</a>
+
+<!-- LinkedIn -->
+<a href="www.linkedin.com/in/victor-igb-ogabor-647173211" target="_blank" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition duration-300">
+    <i class="fab fa-linkedin-in"></i>
+</a>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-1/2 p-8 md:p-12">
+                            <form action="https://formsubmit.co/victorigbogabor@gmail.com" method="POST" class="space-y-6">
+                                <!-- turn off spam-captchas -->
+                                <input type="hidden" name="_captcha" value="false">
+                            
+                                <!-- optional: custom subject line inside the email you’ll receive -->
+                                <input type="hidden" name="_subject" value="New VIO Website Enquiry">
+                            
+                                <!-- optional: after-submit thank-you page -->
+                                <!-- <input type="hidden" name="_next" value="https://vio.com/thanks.html"> -->
+                            
+                                <!-- Name -->
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                    <input type="text"
+                                           id="name"
+                                           name="name"
+                                           placeholder="John Doe"
+                                           required
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vio-orange focus:border-transparent">
+                                </div>
+                            
+                                <!-- Email -->
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                    <input type="email"
+                                           id="email"
+                                           name="email"
+                                           placeholder="john@example.com"
+                                           required
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vio-orange focus:border-transparent">
+                                </div>
+                            
+                                <!-- Service -->
+                                <div>
+                                    <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In</label>
+                                    <select id="service"
+                                            name="service"
+                                            required
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vio-orange focus:border-transparent">
+                                        <option value="">Select a service</option>
+                                        <option value="branding">Branding & Design</option>
+                                        <option value="website">Website & Shopify</option>
+                                        <option value="content">Content & Writing</option>
+                                        <option value="strategy">Creative Strategy</option>
+                                    </select>
+                                </div>
+                            
+                                <!-- Message -->
+                                <div>
+                                    <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                    <textarea id="message"
+                                              name="message"
+                                              rows="4"
+                                              placeholder="Tell us about your project..."
+                                              required
+                                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vio-orange focus:border-transparent"></textarea>
+                                </div>
+                            
+                                <!-- Send button -->
+                                <button type="submit"
+                                        class="w-full bg-vio-orange hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                                    Send Message
+                                </button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-vio-charcoal text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="vios-logo.png" alt="VIO Logo" class="w-10 h-10 rounded-full object-cover">
+                        <span class="ml-2 text-xl font-bold">VIO</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Smart, high-impact design and digital solutions for individuals, businesses, and startups.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Branding & Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Website & Shopify</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Content & Writing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Creative Strategy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition duration-300">Projects</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for design tips and updates.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-vio-orange hover:bg-orange-600 px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 VIO Brand. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
