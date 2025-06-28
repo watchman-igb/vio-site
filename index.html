@@ -37,6 +37,27 @@
         <link rel="icon" type="image/png" href="/vio-logoss.png">
       
         <!-- Tailwind & other scripts stay here -->
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  keyframes: {
+                    float: {
+                      '0%, 100%': { transform: 'translateY(0)' },
+                      '50%': { transform: 'translateY(-12px)' }
+                    }
+                  },
+                  animation: {
+                    float: 'float 6s ease-in-out infinite'
+                  },
+                  colors: {
+                    'vio-orange': '#F7931E',
+                    'vio-blue': '#003366'
+                  }
+                }
+              }
+            };
+          </script>          
       </head>
       
     <link rel="icon" type="image/png" href="vios-logo.png">
@@ -150,6 +171,7 @@
                 <a href="#home" class="py-2 font-medium">Home</a>
                 <a href="#services" class="py-2 font-medium">Services</a>
                 <a href="#projects" class="py-2 font-medium">Projects</a>
+                <a href="case-studies.html" class="hover:text-vio-orange">Case Studies</a>
                 <a href="#testimonials" class="py-2 font-medium">Testimonials</a>
                 <a href="#contact" class="py-2 font-medium">Contact</a>
             </div>
@@ -179,7 +201,8 @@
                 <div class="relative">
                     <div class="w-64 h-64 md:w-80 md:h-80 bg-vio-orange rounded-full opacity-20 absolute -top-10 -left-10"></div>
                     <div class="w-64 h-64 md:w-80 md:h-80 bg-vio-blue rounded-full opacity-20 absolute -bottom-10 -right-10"></div>
-                    <img src="vio-logoss.png" alt="VIO brand mockup" class="relative z-10 rounded-xl shadow-xl w-full max-w-md">
+                    <img src="vio-logoss.png" alt="VIO brand mockup"
+         class="relative z-10 rounded-xl shadow-xl w-full max-w-md animate-float">
 
                 </div>
             </div>
