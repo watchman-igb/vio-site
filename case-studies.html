@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies | VIO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind dark‑mode by class, enable if user prefers dark scheme
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'vio-orange': '#F7931E',
+            'vio-blue': '#003366'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" href="/vio-logoss.png" type="image/png">
+</head>
+<body class="font-sans bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+  <!-- Header -->
+  <header class="bg-white dark:bg-gray-800/80 backdrop-blur shadow-md sticky top-0 z-50 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="/vio-logoss.png" alt="VIO Logo" class="w-10 h-10 rounded-full">
+        <span class="text-xl font-bold text-vio-orange">VIO</span>
+      </a>
+      <nav class="space-x-6 text-sm">
+        <a href="index.html" class="hover:text-vio-orange">Home</a>
+        <a href="services.html" class="hover:text-vio-orange">Services</a>
+        <a href="case-studies.html" class="font-semibold text-vio-orange">Case Studies</a>
+        <a href="contact.html" class="hover:text-vio-orange">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="py-16 text-center">
+    <h1 class="text-4xl font-extrabold mb-4 text-vio-blue dark:text-vio-orange">Case Studies</h1>
+    <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">Real results, real clients. Explore how VIO transforms ideas into measurable growth.</p>
+  </section>
+
+  <!-- Case Study Grid -->
+  <section class="max-w-7xl mx-auto px-6 pb-24 grid md:grid-cols-2 gap-10">
+    <!-- Card Template -->
+    <div class="group bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+      <div class="overflow-hidden">
+        <img src="/images/shopify-client.jpg" alt="Shopify redesign screenshot" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6 space-y-3">
+        <h2 class="text-xl font-bold text-vio-blue dark:text-vio-orange">Shopify Store Redesign (Spain)</h2>
+        <p class="text-sm">Client: Maria G., eCommerce Owner</p>
+        <p class="text-gray-600 dark:text-gray-300">Revamped UI, optimized mobile, integrated smart product filters and speed tweaks.</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li><strong>Problem:</strong> High bounce rate</li>
+          <li><strong>Solution:</strong> UI/UX overhaul</li>
+          <li><strong>Result:</strong> +48% conversion</li>
+        </ul>
+        <a href="case-shopify.html" class="inline-flex items-center gap-2 text-vio-orange hover:underline">
+          View Full Case <span class="transition-transform group-hover:translate-x-1">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="group bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+      <div class="overflow-hidden">
+        <img src="/images/branding-project.jpg" alt="Branding project screenshot" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6 space-y-3">
+        <h2 class="text-xl font-bold text-vio-blue dark:text-vio-orange">Brand Identity for Tech Startup (UK)</h2>
+        <p class="text-sm">Client: Sam D., Founder</p>
+        <p class="text-gray-600 dark:text-gray-300">Delivered logo, visual system, and style guide aligned with product vision.</p>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li><strong>Problem:</strong> No cohesive identity</li>
+          <li><strong>Solution:</strong> Full brand system</li>
+          <li><strong>Result:</strong> Investor confidence boosted</li>
+        </ul>
+        <a href="case-branding.html" class="inline-flex items-center gap-2 text-vio-orange hover:underline">
+          View Full Case <span class="transition-transform group-hover:translate-x-1">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-gray-800 border-t dark:border-gray-700 py-6 text-sm">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between">
+      <p>&copy; 2025 VIO. All rights reserved.</p>
+      <a href="mailto:victorigbogabor@gmail.com" class="hover:text-vio-orange">Email Me</a>
+    </div>
+  </footer>
+</body>
+</html>
