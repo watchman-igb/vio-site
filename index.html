@@ -683,64 +683,59 @@
                         </div>
                         
                         <div class="md:w-1/2 p-8 md:p-12">
-                            <form name="contact" netlify class="space-y-6">
-                                <!-- Hidden input for Netlify to track the form -->
-                                <input type="hidden" name="form-name" value="contact">
-                            
-                                <!-- Name -->
-                                <div>
-                                    <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
-                                    <input type="text"
-                                           id="name"
-                                           name="name"
-                                           placeholder="John Doe"
-                                           required
-                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vio-orange focus:border-transparent">
-                                </div>
-                            
-                                <!-- Email -->
-                                <div>
-                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                                    <input type="email"
-                                           id="email"
-                                           name="email"
-                                           placeholder="john@example.com"
-                                           required
-                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vio-orange focus:border-transparent">
-                                </div>
-                            
-                                <!-- Service -->
-                                <div>
-                                    <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In</label>
-                                    <select id="service"
-                                            name="service"
-                                            required
-                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vio-orange focus:border-transparent">
-                                        <option value="">Select a service</option>
-                                        <option value="branding">Branding & Design</option>
-                                        <option value="website">Website & Shopify</option>
-                                        <option value="content">Content & Writing</option>
-                                        <option value="strategy">Creative Strategy</option>
-                                    </select>
-                                </div>
-                            
-                                <!-- Message -->
-                                <div>
-                                    <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
-                                    <textarea id="message"
-                                              name="message"
-                                              rows="4"
-                                              placeholder="Tell us about your project..."
-                                              required
-                                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vio-orange focus:border-transparent"></textarea>
-                                </div>
-                            
-                                <!-- Send button -->
-                                <button type="submit"
-                                        class="w-full bg-vio-orange hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
-                                    Send Message
-                                </button>
-                            </form>
+                         <form action="https://formsubmit.co/victorigbogabor@gmail.com" method="POST" class="space-y-6">
+  <!-- turn off spam‑captchas -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- auto‑redirect to a thank‑you section on the same page -->
+  <input type="hidden" name="_next" value="#thanks">
+
+  <!-- custom email subject -->
+  <input type="hidden" name="_subject" value="🚀 New enquiry from VIO official site">
+
+  <!-- Name -->
+  <div>
+    <label for="name" class="block font-medium mb-2">Your Name</label>
+    <input type="text" id="name" name="name" required placeholder="John Doe"
+           class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-vio-orange">
+  </div>
+
+  <!-- Email -->
+  <div>
+    <label for="email" class="block font-medium mb-2">Email Address</label>
+    <input type="email" id="email" name="email" required placeholder="john@example.com"
+           class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-vio-orange">
+  </div>
+
+  <!-- Service -->
+  <div>
+    <label for="service" class="block font-medium mb-2">Service Interested In</label>
+    <select id="service" name="service" required
+            class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-vio-orange">
+      <option value="">Select a service</option>
+      <option value="branding">Branding & Design</option>
+      <option value="website">Website & Shopify</option>
+      <option value="content">Content & Writing</option>
+      <option value="strategy">Creative Strategy</option>
+    </select>
+  </div>
+
+  <!-- Message -->
+  <div>
+    <label for="message" class="block font-medium mb-2">Your Message</label>
+    <textarea id="message" name="message" rows="4" required
+              placeholder="Tell us about your project…"
+              class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-vio-orange"></textarea>
+  </div>
+
+  <!-- Send button -->
+  <button type="submit"
+          class="w-full bg-vio-orange hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition">
+    Send Message
+  </button>
+</form>
+
+
                             
                         </div>
                     </div>
